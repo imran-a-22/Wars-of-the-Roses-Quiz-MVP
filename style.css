@@ -1,0 +1,187 @@
+/* Peak Mind Quiz Stylesheet */
+
+/* Colour variables based on MVP specification */
+:root {
+  --color-bg: #0F172A;
+  --color-card: #1E293B;
+  --color-primary: #2563EB;
+  --color-accent: #F97316;
+  --color-correct: #22C55E;
+  --color-wrong: #EF4444;
+  --color-warning: #F59E0B;
+  --color-text-main: #F8FAFC;
+  --color-text-muted: #CBD5E1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  min-height: 100vh;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Shared card container for screens */
+.screen-card {
+  background-color: var(--color-card);
+  padding: 30px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+h1, h2, h3 {
+  margin-top: 0;
+  color: var(--color-text-main);
+}
+
+p {
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+/* Buttons */
+button {
+  background-color: var(--color-primary);
+  color: var(--color-text-main);
+  border: none;
+  padding: 10px 16px;
+  margin: 10px 0;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+button:hover {
+  background-color: #1d4ed8; /* darker blue */
+}
+button.secondary {
+  background-color: var(--color-accent);
+}
+button.secondary:hover {
+  background-color: #ea580c;
+}
+button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Input fields */
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #334155;
+  border-radius: 4px;
+  background-color: #0F172A;
+  color: var(--color-text-main);
+}
+
+select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #334155;
+  border-radius: 4px;
+  background-color: #0F172A;
+  color: var(--color-text-main);
+}
+
+/* List of recent attempts */
+.recent-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.recent-list li {
+  background-color: var(--color-card);
+  padding: 8px;
+  margin-bottom: 6px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.recent-list li span {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+/* Quiz options styling */
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.quiz-option {
+  padding: 12px;
+  border: 1px solid #334155;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.quiz-option:hover {
+  background-color: #1e40af; /* slight highlight on hover */
+}
+.quiz-option.selected {
+  border-color: var(--color-primary);
+  background-color: #1e40af;
+}
+.quiz-option.correct {
+  background-color: var(--color-correct);
+  border-color: var(--color-correct);
+  color: #0F172A;
+}
+.quiz-option.wrong {
+  background-color: var(--color-wrong);
+  border-color: var(--color-wrong);
+  color: #0F172A;
+}
+
+/* Feedback text */
+.feedback {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.feedback.correct {
+  color: var(--color-correct);
+}
+.feedback.wrong {
+  color: var(--color-wrong);
+}
+
+/* Timer */
+.timer {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--color-accent);
+}
+
+/* Chart container */
+.chart-container {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 20px;
+}
+
+/* Hidden class for screens not shown */
+.hidden {
+  display: none;
+}
+
